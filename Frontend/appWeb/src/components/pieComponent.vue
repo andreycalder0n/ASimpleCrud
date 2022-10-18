@@ -1,3 +1,3 @@
 <template> 
-    <p>Todos los derechos reservados</p>
+    <p>Grupo 1004</p>
 </template>
