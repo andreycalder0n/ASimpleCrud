@@ -37,6 +37,11 @@ export default {
         };
     },
 
+    mounted() {
+        this.listar()
+    },
+
+    
     methods: {
         async listar() {
 
@@ -77,7 +82,7 @@ export default {
 }; //export default
 </script>
 
-<style scoped>
+<style>
     #tabla {
         color:aquamarine;
     }

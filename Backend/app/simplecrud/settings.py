@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gb$0olv9flsb4tt4!uy1_56a03j4-=+yr@udb^ap2@%c@$stq6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,6 +54,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'simplecrud.urls'
 
@@ -70,6 +71,20 @@ CORS_ALLOWED_METHODS = [
     "PUT",
 ]
 
+# CORS_ORIGIN_WHITELIST = ( 
+#   'http://127.0.0.1:5173', 
+# )
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
