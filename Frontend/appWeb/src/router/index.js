@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import('../views/envioView.vue')
     },
     {
+      path: '/envio/:id',
+      name: 'editar',
+      component: () => import('../views/envioView.vue')
+    },
+    {
       path: '/listar',
       name: 'listar',
       component: () => import('../views/listadoView.vue')
