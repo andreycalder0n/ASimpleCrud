@@ -1,4 +1,4 @@
-<template> 
+<template> //Barra de navegacion en el header
     <nav class="navbar navbar-dark bg-primary"> 
         <div class="container-fluid"> 
             <a class="navbar-brand">App Projects</a> 

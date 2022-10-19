@@ -1,9 +1,9 @@
 <template>
     <h3>Listado</h3>
     <div>
-        <table class="table  table-sm" id="tabla">
-            <thead class="table-dark">
-                <tr>
+        <table class="table  table-sm" id="tabla"> //Tabla traida de la base de datos
+            <thead class="table-dark"> //Enunciados de la tabla
+                <tr> 
                     <th scope="col">Id</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
@@ -12,7 +12,7 @@
                     <th colspan="2">Acciones</th>
                 </tr>
             </thead>
-            <tbody v-for="elemento in listado" :key="elemento.id">
+            <tbody v-for="elemento in listado" :key="elemento.id"> //Visualizadion de archivos en la tabla
                 <tr>
                     <td>{{elemento.id}}</td>
                     <td>{{elemento.title}}</td>
@@ -27,7 +27,7 @@
     </div>
 </template>
 
-<script>
+<script>  // codigo con javascript que permite interactuar con la lista
 export default {
     name: "envio",
     
@@ -41,7 +41,7 @@ export default {
         this.listar()
     },
 
-    
+
     methods: {
         async listar() {
 
@@ -51,10 +51,10 @@ export default {
                 response = await fetch(url);
                 const datos = await response.json();
                 this.listado = datos;
-            }
+            } //Se listan los datos
             catch (error) {
                 alert("ERROR: " + " " + error)
-            }
+            } //En caso de error arroja una alerta
         },
 
         async deleteReg(id) {

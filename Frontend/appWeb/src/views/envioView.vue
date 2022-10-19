@@ -1,4 +1,4 @@
-<template>
+<template> //Layout de la ventana 
     <form>
         <div class="form-group">
             <label>Title</label>
@@ -8,7 +8,7 @@
                 class="form-control"
                 id="title"
             />
-        </div>
+        </div> //Espacio correspondiente al titulo
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Descripción</label>
@@ -18,7 +18,7 @@
                 id="description"
                 rows="5"
             ></textarea>
-        </div>
+        </div> //Espacio correspondiente a la descripcion
 
         <div class="form-group">
             <label>Technology</label>
@@ -28,9 +28,9 @@
                 class="form-control"
                 id="technology"
             />
-        </div>
+        </div> //Espacio para agregar la tecnologia
 
-        <div id="botones">
+        <div id="botones"> //Se agrega los botones de Guardar y editar
             <button id="btn_guardar" type="submit" class="btn btn-success" @click="insert()">Guardar</button>
             <button type="submit" class="btn btn-primary" @click="editar()">Editar</button>
         </div>
@@ -46,7 +46,7 @@
     }
 </style>
 
-<script>
+<script> //Javascript del la vista Projects
 import { stringify } from 'postcss';
 
 

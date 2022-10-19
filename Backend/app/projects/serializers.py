@@ -1,7 +1,7 @@
 from dataclasses import fields
 from rest_framework import serializers
 from .models import Project
-
+#Clase con los datos correspondiente al listado en base de datos
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
