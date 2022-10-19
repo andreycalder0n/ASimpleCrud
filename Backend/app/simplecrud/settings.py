@@ -51,7 +51,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'simplecrud.urls'
+# ROOT_URLCONF = 'simplecrud.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5573",
+]
+
+CORS_ALLOWED_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
 
 TEMPLATES = [
     {

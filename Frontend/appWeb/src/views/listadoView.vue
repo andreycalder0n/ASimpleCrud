@@ -26,3 +26,59 @@
         </table>
     </div>
 </template>
+
+<script>
+export default {
+    name: "envio",
+    
+    data() {
+        return {
+            listado: [],
+        };
+    },
+
+    methods: {
+        async listar() {
+
+            let response
+            let url = "http://127.0.0.1:8000/api/projects/";
+            try {
+                response = await fetch(url);
+                const datos = await response.json();
+                this.listado = datos;
+            }
+            catch (error) {
+                alert("ERROR: " + " " + error)
+            }
+        },
+
+        async deleteReg(id) {
+            const elimina = confirm("¿Está seguro de eliminar este resgitro?")
+
+            if(elimina) {
+                let url = "http://127.0.0.1:8000/api/projects/" + id + "/";
+                try {
+                    let response = await fetch(url, {
+                        method: "DELETE",
+                        headers: {'content-type': 'application/json'},
+                    });
+                    
+                    if (response.ok){
+                        alert("Registro eliminado exitosamente " +  id)
+                        this.$options.methods.listar.bind(this)(); //ejecutamos el metodo listar
+                    }
+                }
+                catch (error) {
+                    alert("ERROR: " + " " + error);
+                } //try catch
+            } //If elimina
+        } //deleteReg
+    }// se cierra methods
+}; //export default
+</script>
+
+<style scoped>
+    #tabla {
+        color:aquamarine;
+    }
+</style>
